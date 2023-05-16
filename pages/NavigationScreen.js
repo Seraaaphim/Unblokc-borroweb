@@ -6,6 +6,7 @@ import Dashboard from "./Dashboard";
 import Donate from "./Donate";
 import Request from "./Request";
 import Learn from "./Learn";
+import LenderPage from "./LenderPage";
 
 const Tab = createBottomTabNavigator();
 

@@ -13,6 +13,7 @@ import AccountSetting from "./AccountSetting";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import DonationKnowledge from "./DonationKnowledge";
 import RequestKnowledge from "./RequestKnowledge";
+import LenderPage from "./LenderPage";
 
 export default function Learn() {
   const navigation = useNavigation();

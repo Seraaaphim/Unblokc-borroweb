@@ -11,6 +11,7 @@ import {
 } from "react-native";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import AccountSetting from "./AccountSetting";
+import LenderPage from "./LenderPage";  
 
 export default function Dashboard() {
   const navigation = useNavigation();
@@ -122,7 +123,7 @@ export default function Dashboard() {
 
             
 
-            <TouchableOpacity onPress={() => navigation.navigate("Learn")}> 
+            <TouchableOpacity onPress={() => navigation.navigate("LenderPage")}> 
               <Image style={{ width: 45, height: 45, transform: [{ scaleX: -1 }]}}
               source={require("../assets/BackButton.png")}/>
               {/*<Text style={{fontSize: 15}}>See more</Text>*/}

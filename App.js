@@ -8,8 +8,8 @@ import { NavigationContainer } from "@react-navigation/native";
 
 // Screens
 // import { Request } from "./Request";
-import SignIn from "./pages/SignIn";
-import SignUp from "./pages/SignUp";
+//import SignIn from "./pages/SignIn";
+//import SignUp from "./pages/SignUp";
 import AccountSetting from "./pages/AccountSetting";
 import NavigationScreen from "./pages/NavigationScreen";
 import DonatorMap from "./pages/donation/DonatorMap";
@@ -19,11 +19,14 @@ import RequestKnowledge from "./pages/RequestKnowledge";
 import DonationKnowledge from "./pages/DonationKnowledge";
 import BloodRequestStart from "./pages/BloodRequestStart";
 import WhyDonate from "./pages/WhyDonate";
+import LenderPage from "./pages/LenderPage";
+import BorrowerPage from "./pages/BorrowerPage";
 
 //import Donate from "./pages/Donate";
 import Profile from "./pages/Profile";
 // import Onboarding1 from "./pages/Onboarding1";
 import Dashboard from "./pages/Dashboard";
+
 
 const Stack = createNativeStackNavigator();
 
@@ -31,7 +34,7 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen
+        {/*<Stack.Screen
           name="SignUp"
           component={SignUp}
           options={{
@@ -112,6 +115,20 @@ function App() {
         <Stack.Screen
           name="WhyDonate"
           component={WhyDonate}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="LenderPage"
+          component={LenderPage}
+          options={{
+            headerShown: false,
+          }}
+        />*/}
+        <Stack.Screen
+          name="BorrowerPage"
+          component={BorrowerPage}
           options={{
             headerShown: false,
           }}
