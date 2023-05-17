@@ -26,6 +26,7 @@ import BorrowerPage from "./pages/BorrowerPage";
 import Profile from "./pages/Profile";
 // import Onboarding1 from "./pages/Onboarding1";
 import Dashboard from "./pages/Dashboard";
+import ChooseLender from "./pages/ChooseLender";
 
 
 const Stack = createNativeStackNavigator();
@@ -133,6 +134,13 @@ function App() {
             headerShown: false,
           }}
         />
+        {/*<Stack.Screen
+          name="ChooseLender"
+          component={ChooseLender}
+          options={{
+            headerShown: false,
+          }}
+        />*/}
       </Stack.Navigator>
     </NavigationContainer>
   );

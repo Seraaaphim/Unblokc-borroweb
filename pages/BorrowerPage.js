@@ -18,49 +18,47 @@ return (
         {/* Header */}
         <View style={{width: "100%", justifyContent: "space-between", flexDirection: "row"}}>
             <TouchableOpacity>
-                <View style={styles.profcircle}/>
+                <Image style={{ width: 30, height: 30 }}
+                source={require("../assets/ProfileIcon.png")}/>
             </TouchableOpacity>
             <TouchableOpacity>
-                <View style={styles.profcircle}/>
+            <Image style={{ width: 27, height: 27 }}
+                source={require("../assets/NotifIcon.png")}/>
             </TouchableOpacity>
         </View>
 
         <View style={{width:"100%", height: 30}}/>
 
         {/* Balance */}
-        <View style={{width: "100%", height: 90, padding: 15, justifyContent: "center",
-                  backgroundColor: "#F8FCF8", borderWidth: 0.2}}>
-            <Text style={styles.font15}>Balance</Text>
-            <Text style={styles.font25}>Php 20.12</Text>
-        </View> 
-        
-        <View style={{width:"100%", height: 20}}/>
-        
-        {/* To pay */}
-        <View style={{width: "100%", height: 90, padding: 15, justifyContent: "center",
-                  backgroundColor: "#F8FCF8", borderWidth: 0.2}}>
-            <Text style={styles.font15}>To pay</Text>
-            <Text style={styles.font25}>Php 20.12</Text>
-        </View> 
-        
-        <View style={{width:"100%", height: 20}}/>
-
-        {/* Credit Score */}
-        <View style={{width: "100%", height: 90, backgroundColor: "#F8FCF8", borderWidth: 0.2}}>
-            <View style={{flexDirection: "row"}}>
-                <View style={{width: "25%", height: 90, paddingLeft: 15, justifyContent: "center",}}>
-                <View style={styles.progcircle}/>
-                </View> 
-
-                <View style={{width: "60%", height: 90, padding: 15, justifyContent: "center",}}>
-                <Text style={styles.font15}>Credit Score</Text>
-                <Text style={styles.font25}>60</Text>
-                </View> 
+        <View style={{width: "100%", height: 170, padding: 15, justifyContent: "center",
+                      borderRadius: 5, borderWidth: 0.2}}>
+            
+            {/* For separation */}
+            <View style={{width: "100%", justifyContent: "space-between", flexDirection: "row"}}>
+                <View style={{width: "90%", height: 90}}>
+                <Text style={[styles.font25, styles.bold]}>Php 7,107</Text>
+                <Text style={[styles.font15, styles.gray]}>Account Balance</Text>
+                </View>
+                <View style={{width: "10%", height: 90}}>
+                    <Image style={{ width: 30, height: 30}}
+                    source={require("../assets/Eye.png")}/>
+                </View>
             </View>
-        </View>
 
+            <View style={{width: "100%", flexDirection: "row"}}>
+                <View style={{height: 35, width: 90, borderRadius: 15, alignItems: 'center',
+                              justifyContent: 'center',backgroundColor: 'black', marginRight: 10}}>
+                <Text style={{color: '#fff'}}>Cash in</Text>
+                </View>
+                <View style={{height: 35, width: 90, borderRadius: 15, alignItems: 'center',
+                              justifyContent: 'center',backgroundColor: '#f8f8f8', marginRight: 10}}>
+                <Text style={{color: '#969799'}}>Pay Loan</Text>
+                </View>
+            </View>
+
+        </View> 
+        
         <View style={{width:"100%", height: 20}}/>
-
 
         {/* Knowledge Base */}
         <View style={{height: 100}}>
@@ -77,6 +75,32 @@ return (
         </View>
         
         <View style={{width:"100%", height: 20}}/>
+
+        {/* Credit Score */}
+        <View style={{width: "100%", height: 250, borderRadius: 10, borderWidth: 0.2, padding: 15}}>
+            <View style={{justifyContent: "space-between",flexDirection: "row", paddingTop: 10}}>
+                <View style={{width: "60%", height: 40, justifyContent: "center"}}>
+                    <Text style={[styles.font20,styles.bold]}>Credit Score</Text>
+                </View> 
+
+                <View style={{width: "40%", height: 40, backgroundColor: '#cedff2', borderRadius: 20,
+                            alignItems: "center",justifyContent: "center"}}>
+                    <TouchableOpacity>
+                    <Text style={[styles.font13, {color: '#004479'}]}>Learn more</Text>
+                    </TouchableOpacity>
+                </View> 
+            </View>
+
+            <View style={{width:"100%", height: 40}}/>
+
+            <View style={styles.centerall}>
+                <Image style={{ width: 120, height: 120}}
+                    source={require("../assets/CreditScoreGauge.png")}/>
+            </View>
+
+        </View>
+
+
           
 
         <View style={{width:"100%", height: 70}}/>
@@ -108,11 +132,7 @@ const styles = StyleSheet.create({
     lightorange:{color: "#FFDEB8",},    
     gray: {color:"#969799"},
 
-    font5:{fontSize: 5,},
-    font10:{fontSize: 10,},
-    font15:{fontSize: 15,},
-    font20:{fontSize: 20,},
-    font25:{fontSize: 25,},
-    font30:{fontSize: 30,},
-    bold:{fontWeight: "bold",},
+    font5:{fontSize: 5,}, font10:{fontSize: 10,}, font13:{fontSize: 13,},
+    font15:{fontSize: 15,}, font20:{fontSize: 20,}, font25:{fontSize: 25,},
+    font30:{fontSize: 30,}, bold:{fontWeight: "bold",},
 });
