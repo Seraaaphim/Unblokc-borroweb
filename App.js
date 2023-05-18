@@ -139,7 +139,7 @@ function App() {
           component={ChooseLender}
           options={{
             headerShown: false,
-          }}
+          }
         />*/}
       </Stack.Navigator>
     </NavigationContainer>
