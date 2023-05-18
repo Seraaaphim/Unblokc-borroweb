@@ -18,92 +18,118 @@ return (
         {/* Header */}
         <View style={{width: "100%", justifyContent: "space-between", flexDirection: "row"}}>
             <TouchableOpacity>
-                <View style={styles.profcircle}/>
+                <Image style={{ width: 30, height: 30 }}
+                source={require("../assets/ProfileIcon.png")}/>
             </TouchableOpacity>
             <TouchableOpacity>
-                <View style={styles.profcircle}/>
+            <Image style={{ width: 27, height: 27 }}
+                source={require("../assets/NotifIcon.png")}/>
             </TouchableOpacity>
         </View>
 
-        <View style={{width:"100%", height: 30}}/>
+        <View style={{width:"100%", height: 10}}/>
+
+        
 
         {/* Earnings */}
         <Text style={[styles.font25, styles.bold]}>Earnings</Text>
         <View style={{width:"100%", height: 20}}/>
         
-        <View style={{height: 100}}>
-        <ScrollView horizontal={true}> 
-            <View style={{width: 250, height: 100, marginRight: 15,
-                  backgroundColor: "#F8FCF8", borderWidth: 0.2}}>
-            </View>    
-            
-            <View style={{width: 250, height: 100, marginRight: 10,
-                  backgroundColor: "#F8FCF8", borderWidth: 0.2}}>
-            </View> 
-        </ScrollView>
+        <View style={[styles.centerall,{width: "100%", height: 130, borderRadius: 15,
+                  backgroundColor: "black",}]}>
+            <Text style={[styles.font20,{color:'#fff'}]}>This week</Text>
+            <Text style={[styles.font30,styles.bold,{color:'#fff'}]}>Php 7,107</Text>
+            <View style={{width:"100%", height: 5}}/>
+            <Text style={[styles.font13,{color:'#fff'}]}>See detailed report</Text>
+        </View>    
+
+        <View style={{width:"100%", height: 20}}/>
+
+        {/* Overview */} 
+        <Text style={[styles.font25, styles.bold]}>Overview</Text>
+        <View style={{width:"100%", height: 20}}/>
+        <View style={[styles.centerall,{width:'100%',height:360,borderWidth:0.2,
+                    borderRadius: 10}]}>
+            <Image style={{ width: 280, height: 350 }}
+                source={require("../assets/OverviewContent.png")}/>
         </View>
-        
+
         <View style={{width:"100%", height: 20}}/>
 
         {/* Active Loans */}
         <Text style={[styles.font25, styles.bold]}>Active Loans</Text>
-        <View style={{width:"100%", height: 20}}/>
         
-        <View style={{width: "100%", height: 150, marginBottom: 15, padding: 10,
-            backgroundColor: "#F8FCF8", borderWidth: 0.2}}>
-            <Text style={styles.font15}>Name Name</Text>
-            <Text style={styles.font15}>Total loan amount: 0 000</Text>
-            <View style={{width:"100%", height: 10}}/>
-            {/*For separation*/}
-            <View style={{flexDirection: "row"}}>
-                <View style={{width: "25%", height: 70, justifyContent: "center"}}>
-                    <View style={styles.progcircle}/>
+        <View style={{width: "100%", height: 220, padding: 15,
+            borderRadius: 5, borderWidth: 0.2, paddingTop: 20, marginTop: 20}}>
+            <View style={{flexDirection: "row", justifyContent:"space-between", marginBottom: 20}}>
+                <View style={{justifyContent: "center"}}>
+                <Text style={[styles.font20,styles.bold]}>Buffay, Phoebe</Text>
                 </View>
 
-                <View style={{width: "25%", height: 70}}>
-                    <Text style={styles.font10}>Paid amount</Text>
-                    <Text style={styles.font20}>1500 / 25000</Text>
-                </View>
-
-                <View style={{width: "25%", height: 70, justifyContent: "center"}}>
-                    <View style={styles.progcircle}/>
-                </View>
-
-                <View style={{width: "25%", height: 70}}>
-                    <Text style={styles.font15}>3 days remaining</Text>
-                    <Text style={styles.font10}>Until Jan. 1, 2023</Text>
+                <View style={{justifyContent: "center"}}>
+                <TouchableOpacity>
+                <Text style={[styles.font13,styles.safetyblue]}>Transaction History</Text>
+                </TouchableOpacity>
                 </View>
             </View>
-        </View>    
+            <Text style={[styles.font13,styles.gray]}>Remaining Balance of:</Text>
+            <View style={{width:"100%", height: 5}}/>
+
+            <View style={{flexDirection: "row", justifyContent:"space-between"}}>
+                <Text style={[styles.font23,styles.bold]}>Php 1,051</Text>
+
+                <View style={[styles.centerall,{width: 100, height: 30, marginBottom:15,
+                    borderRadius: 15,backgroundColor: '#f8f8f8'}]}>
+                    <Text style={[styles.font13,styles.gray]}>Due April 19</Text>
+                </View>
+            </View>
             
-        <View style={{width: "100%", height: 150, marginBottom: 15, padding: 10,
-            backgroundColor: "#F8FCF8", borderWidth: 0.2}}>
-            <Text style={styles.font15}>Name Name</Text>
-            <Text style={styles.font15}>Total loan amount: 0 000</Text>
-            <View style={{width:"100%", height: 10}}/>
-            {/*For separation*/}
-            <View style={{flexDirection: "row"}}>
-                <View style={{width: "25%", height: 70, justifyContent: "center"}}>
-                    <View style={styles.progcircle}/>
-                </View>
-
-                <View style={{width: "25%", height: 70}}>
-                    <Text style={styles.font10}>Paid amount</Text>
-                    <Text style={styles.font20}>1500 / 25000</Text>
-                </View>
-
-                <View style={{width: "25%", height: 70, justifyContent: "center"}}>
-                    <View style={styles.progcircle}/>
-                </View>
-
-                <View style={{width: "25%", height: 70}}>
-                    <Text style={styles.font15}>3 days remaining</Text>
-                    <Text style={styles.font10}>Until Jan. 1, 2023</Text>
+            <View style={styles.centerall}>
+                <Text style={styles.font15}>May due successfully paid</Text>
+                <View style={[styles.centerall, {width: 150, height: 35,
+                    backgroundColor:'#cedff2', marginTop: 15, borderRadius: 25}]}>
+                <Text style={[styles.font13,styles.safetyblue]}>Message Phoebe</Text>
                 </View>
             </View>
-        </View> 
 
-        <View style={{width:"100%", height: 70}}/>
+        </View>
+
+        <View style={{width: "100%", height: 220, padding: 15,
+            borderRadius: 5, borderWidth: 0.2, paddingTop: 20, marginTop: 20}}>
+            <View style={{flexDirection: "row", justifyContent:"space-between", marginBottom: 20}}>
+                <View style={{justifyContent: "center"}}>
+                <Text style={[styles.font20,styles.bold]}>Green, Rachel</Text>
+                </View>
+
+                <View style={{justifyContent: "center"}}>
+                <TouchableOpacity>
+                <Text style={[styles.font13,styles.safetyblue]}>Transaction History</Text>
+                </TouchableOpacity>
+                </View>
+            </View>
+            <Text style={[styles.font13,styles.gray]}>Remaining Balance of:</Text>
+            <View style={{width:"100%", height: 5}}/>
+
+            <View style={{flexDirection: "row", justifyContent:"space-between"}}>
+                <Text style={[styles.font23,styles.bold]}>Php 0</Text>
+
+                <View style={[styles.centerall,{width: 130, height: 30, marginBottom:15,
+                    borderRadius: 15,backgroundColor: '#f8f8f8'}]}>
+                    <Text style={[styles.font13,styles.gray]}>Paid last May 17</Text>
+                </View>
+            </View>
+            
+            <View style={styles.centerall}>
+                <Text style={styles.font15}>May due successfully paid</Text>
+                <View style={[styles.centerall, {width: 150, height: 35,
+                    backgroundColor:'#cedff2', marginTop: 15, borderRadius: 25}]}>
+                    <Text style={[styles.font13,styles.safetyblue]}>Message Rachel</Text>
+                </View>
+            </View>
+        </View>       
+            
+        {/* Footer */}
+        <View style={{width:"100%", height: 120}}/>
     </View>
 </ScrollView>);
 }
@@ -132,11 +158,7 @@ const styles = StyleSheet.create({
     lightorange:{color: "#FFDEB8",},    
     gray: {color:"#969799"},
 
-    font5:{fontSize: 5,},
-    font10:{fontSize: 10,},
-    font15:{fontSize: 15,},
-    font20:{fontSize: 20,},
-    font25:{fontSize: 25,},
-    font30:{fontSize: 30,},
-    bold:{fontWeight: "bold",},
+    font5:{fontSize: 5,}, font8:{fontSize: 8,}, font10:{fontSize: 10,}, font13:{fontSize: 13,},  
+    font15:{fontSize: 15,}, font18:{fontSize: 18,}, font20:{fontSize: 20,}, font23:{fontSize: 23,}, font25:{fontSize: 25,},
+    font30:{fontSize: 30,}, bold:{fontWeight: "bold",},
 });

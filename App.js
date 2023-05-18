@@ -119,22 +119,22 @@ function App() {
           options={{
             headerShown: false,
           }}
-        />
+        />*/}
         <Stack.Screen
           name="LenderPage"
           component={LenderPage}
           options={{
             headerShown: false,
           }}
-        />*/}
-        <Stack.Screen
+        />
+        {/*<Stack.Screen
           name="BorrowerPage"
           component={BorrowerPage}
           options={{
             headerShown: false,
           }}
         />
-        {/*<Stack.Screen
+        <Stack.Screen
           name="ChooseLender"
           component={ChooseLender}
           options={{
