@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import {StyleSheet, Text, Linking, Button, ScrollView, View, 
     Image, TouchableOpacity,} from "react-native";
 import { Dropdown } from 'react-native-element-dropdown';
-import AccountSetting from "./AccountSetting";
 import { useNavigation, useRoute } from "@react-navigation/native";
 
 const data = [

@@ -10,23 +10,23 @@ import BuySell from "./BuySell";
 
 const Tab = createBottomTabNavigator();
 
-const BorrowerPageScreen = "BorrowerPage";
+const LenderPageScreen = "BorrowerPage";
 const InboxScreen = "Inbox";
 const ChooseLenderScreen = "Lend";
 const BuySellScreen = "BuySell";
 
-const NavigationScreen = () => {
+const NavigationScreenLender = () => {
   const route = useRoute();
   // const userID = route.params.userID
 
   return (
     <Tab.Navigator
-      initialRouteName={BorrowerPage}
+      initialRouteName={LenderPage}
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
           let rn = route.name;
-          if (rn === BorrowerPageScreen) {
+          if (rn === LenderPageScreen) {
             iconName = focused ? "home" : "home";
           } else if (rn === InboxScreen) {
             iconName = focused ? "chatbox-ellipses-outline" : "chatbox-ellipses-outline";
@@ -44,8 +44,8 @@ const NavigationScreen = () => {
     >
       <Tab.Screen
         options={{ headerShown: false }}
-        name="BorrowerPage"
-        component={BorrowerPage}
+        name="LenderPage"
+        component={LenderPage}
       />
       <Tab.Screen
         options={{ headerShown: false }}
@@ -66,4 +66,4 @@ const NavigationScreen = () => {
   );
 };
 
-export default NavigationScreen;
+export default NavigationScreenLender;

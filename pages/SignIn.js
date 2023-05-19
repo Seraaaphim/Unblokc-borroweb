@@ -1,12 +1,5 @@
 import React, { useState } from "react";
-import {
-  View,
-  TextInput,
-  TouchableOpacity,
-  StyleSheet,
-  Text,
-  Alert,
-} from "react-native";
+import {View,TextInput,TouchableOpacity,StyleSheet,Text,Alert,Image,} from "react-native";
 import { useNavigation, useRoute } from "@react-navigation/native";
 
 // Firebase Authentication
@@ -55,34 +48,37 @@ const SignIn = () => {
   };
 
   return (
-    <View style={styles.opencontainer}>
-      <View style={styles.container}>
-        <Text style={styles.text2}>Welcome back! </Text>
-        <Text style={{opacity: 0.5, fontSize: 13, color: "gray",
-            textAlign: "center", paddingHorizontal: 20,}}>
-          We have missed you! Enter your credentials</Text>
+    <View style={styles.container}>
 
-        <Text style={{opacity: 0.5, fontSize: 13, color: "gray", textAlign: "center",
-            paddingHorizontal: 20,}}>
-          to sign in to Sagip.</Text>
+      {/* Borroweb Logo */}
+      <View style={[styles.centerall,]}>
+        <Image style={{ width: 100, height: 150 }}
+                source={require("../assets/Spider.png")}/>
+        <Text styles={{numberOfLines: 1}}>
+          <Text style={[styles.font30,styles.bold]}>Borro</Text>
+          <Text style={[styles.font30,styles.bold, styles.maccheese]}>web</Text>
+        </Text>
       </View>
 
+      <View style={{width: '100%', height: 20}}/>
+
+      {/* Sign In Text */}
+      <Text style={[styles.font25, styles.bold]}>Sign In</Text>
+      <View style={{width: '100%', height: 20}}/>
+
       {/* Email Place holder */}
-      <View>
-        <Text style={styles.text1}>Email</Text>
-        <TextInput
-          style={styles.input}
+        <Text style={[styles.font15,styles.bold]}>Email</Text>
+        <TextInput style={styles.input}
           placeholder=""
           onChangeText={(text) => handleInputChange("email", text)}
           value={InputValues.email}
           keyboardType="email-address"
           autoCapitalize="words"
         />
-      </View>
 
       {/* Password Place holder */}
       <View>
-        <Text style={styles.text1}>Password</Text>
+        <Text style={[styles.font15,styles.bold]}>Password</Text>
         <TextInput
           style={styles.input}
           placeholder=""
@@ -96,94 +92,104 @@ const SignIn = () => {
 
       {/* Sign In Button */}
       <TouchableOpacity onPress={handleSubmit}>
-        <View style={[styles.centerall, styles.nextbutton,]}>
-          <Text style={{ color: "white", fontSize: 17, fontWeight: "700" }}>
+        <View style={[styles.centerall, styles.signinbutton,]}>
+          <Text style={{ color: "white", fontSize: 17, fontWeight: "700"}}>
             Sign In
           </Text>
         </View>
       </TouchableOpacity>
 
-      {/* Dont Have an Account yet? */}
-      <View style={[styles.centerall, { paddingVertical: 10 }]}>
-        <Text numberOfLines={1}>
-          <Text style={{ fontSize: 13 }}>Don’t have an account? </Text>
-            <Text style={{ color: "#DD4438", fontSize: 13 }}
-              onPress={() => navigation.navigate("SignUp")}>
-              Register Now</Text>
-          </Text>
-      </View>
+      <View style={{width: '100%', height: 10}}/>
 
       {/* Or with */}
-      <View style={styles.orwith}>
-        <Text style={{justifyContent: "center", alignItems: "center",textAlign: "center",
-              backgroundColor: "#FFFFFF", width: 100, top: 70, left: "50%",
-              transform: [{ translateX: -50 }, { translateY: -50 }],}}>
-          Or with
+      <View style={styles.centerall}>
+        <Text style={styles.gray}>
+          Or sign in with
         </Text>
       </View>
       
-      <View style={{width: '100%', height: 20}}/>
+      <View style={{width: '100%', height: 10}}/>
 
       {/*Sign in with*/}
-      <View style={[styles.centerall, { paddingVertical: 10 }]}>
-        {/*Apple*/}
-        <TouchableOpacity>
-          <View
-            style={[
-              styles.centerall,
-              styles.signinwithbutton,
-              { backgroundColor: "black" },
-            ]}
-          >
-            <Text style={{ fontSize: 15, color: "#fff" }}>
-              Sign in with Apple
-            </Text>
-          </View>
-        </TouchableOpacity>
+      <View style={{width:'100%',height: 80,}}>
+        {/*For separation*/}
+        <View style={{flexDirection: "row", justifyContent: "space-between"}}>
+            {/*Apple*/}
+            <View style={[styles.centerall,{width:'30%', height:50, 
+                          borderRadius: 8 ,borderWidth: 0.2,}]}>
+              <TouchableOpacity>
+                <Image style={{ width: 25, height: 25 }}
+                source={require("../assets/AppleLogo.png")}/>
+              </TouchableOpacity>
+            </View>
+            
+            {/*Google*/}
+            <View style={[styles.centerall,{width:'30%', height:50, 
+                          borderRadius: 8 ,borderWidth: 0.2,}]}>
+              <TouchableOpacity>
+              <Image style={{ width: 25, height: 25 }}
+                source={require("../assets/GoogleLogo.png")}/>
+              </TouchableOpacity>
+            </View>
 
-        {/*Google*/}
-        <TouchableOpacity>
-          <View
-            style={[
-              styles.centerall,
-              styles.signinwithbutton,
-              { backgroundColor: "white", borderWidth: 0.3, marginTop: 10 },
-            ]}
-          >
-            <Text style={{ fontSize: 15 }}>Sign in with Google</Text>
-          </View>
-        </TouchableOpacity>
+            {/*Facebook*/}
+            <View style={[styles.centerall,{width:'30%', height:50, 
+                          borderRadius: 8 ,borderWidth: 0.2,}]}>
+              <TouchableOpacity>
+              <Image style={{ width: 25, height: 25 }}
+                source={require("../assets/FBLogo.png")}/>
+              </TouchableOpacity>
+            </View>
+        </View>
+        
       </View>
+      
+      {/* Dont Have an Account yet? */}
+      <View style={[styles.centerall,]}>
+        <Text numberOfLines={1}>
+          <Text style={{ fontSize: 13 }}>Don’t have an account? </Text>
+            <Text style={{ color: "#004479", fontSize: 13 }}
+              onPress={() => navigation.navigate("SignUp")}>
+              Register</Text>
+          </Text>
+      </View>
+
+      {/* Footer */}
+      <View style={{width: '100%', height: 150}}/>
+
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  opencontainer: {
-    flex: 1,
+  container: {
     backgroundColor: "#fff",
+    flex: 1,
     paddingHorizontal: 20,
-    paddingVertical: 65,
+    paddingTop: 65,
   },
 
-  container: {
-    justifyContent: "center",
-    alignItems: "center",
-    paddingBottom: 20,
-  },
   input: {
     width: '100%',
     height: 40,
     marginBottom: 20,
     padding: 10,
-    backgroundColor: "#D9D9D9",
+    borderWidth: 0.2,
   },
-  text1: {
-    fontSize: 20,
-    fontWeight: 600,
-  },
-  nextbutton: {
-    backgroundColor: "#DD4438",
+
+    oxblue:{color: "#002147",},
+    white:{color: "#fff",},
+    safetyblue:{color: "#004479",},
+    maccheese:{color: "#FFBA6C",},
+    lightorange:{color: "#FFDEB8",},    
+    gray: {color:"#969799"},
+
+    font5:{fontSize: 5,}, font8:{fontSize: 8,}, font10:{fontSize: 10,}, font13:{fontSize: 13,},  
+    font15:{fontSize: 15,}, font18:{fontSize: 18,}, font20:{fontSize: 20,}, font23:{fontSize: 23,}, font25:{fontSize: 25,},
+    font30:{fontSize: 30,}, bold:{fontWeight: "bold",},
+
+  signinbutton: {
+    backgroundColor: "#002147",
     width: "100%",
     height: 50,
     borderRadius: 10,
@@ -192,36 +198,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  text2: {
-    fontSize: 32,
-    fontWeight: "bold",
-    paddingVertical: 0,
-  },
-  buttonSubmit: {
-    backgroundColor: "#DD4438",
-    width: '100%',
-    height: 40,
-  },
-  buttonText: {
-    color: "#FFFFFF",
-    fontSize: 17,
-    fontWeight: "700",
-  },
-  DontHaveanAccount: {
-    paddingTop: 50,
-  },
-  orwith:{
-    borderBottomColor: "black",
-    borderBottomWidth: 1,
-    paddingBottom: 10,
-    marginVertical: 10,
-    width: '100%',
-  },
-  signinwithbutton: {
-    width: 300,
-    height: 44,
-    borderRadius: 10,
-  },
+
 });
 
 export default SignIn;
